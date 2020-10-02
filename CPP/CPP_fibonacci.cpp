@@ -1,19 +1,20 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main()
-{
-int i,no, first=0, second=1, next;
-first=0;
-second=1;
-cout<<"Enter number of terms for Series: ";
-cin>>no;
-cout<<"Fibonacci series are: \n";
-for(i=0; i<no; i++)
-{
-cout<<"\n"<<first;
-next = first + second;
-first = second;
-second = next;
+int fib(int x) {
+   if((x==1)||(x==0)) {
+      return(x);
+   }else {
+      return(fib(x-1)+fib(x-2));
+   }
 }
-    return 0;
+int main() {
+   int x , i=0;
+   cout << "Enter the number of terms of series : ";
+   cin >> x;
+   cout << "\nFibonnaci Series : ";
+   while(i < x) {
+      cout << " " << fib(i);
+      i++;
+   }
+   return 0;
 }
